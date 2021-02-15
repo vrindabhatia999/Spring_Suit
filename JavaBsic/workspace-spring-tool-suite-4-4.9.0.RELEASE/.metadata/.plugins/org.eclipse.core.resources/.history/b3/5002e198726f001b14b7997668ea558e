@@ -1,0 +1,12 @@
+
+public class primitivevsRef {
+	public static void increament(int someInt) {
+		someInt++;
+	}
+	public static void main(String[] args) {
+		int aPrimitive=10;
+		increament(aPrimitive);
+		System.out.println(aPrimitive);
+	}
+
+}

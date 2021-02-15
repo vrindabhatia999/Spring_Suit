@@ -1,0 +1,52 @@
+
+public class DOWFind {
+	public String dow(int day, int month, int year) {
+		 int numDys=(year-1900)*365;
+		 numDys+=(year-1900)/4;
+		 
+		 switch(month) {
+		 case 12:
+			 numDys+=30;
+			 
+		 case 11:
+			 numDys+=31;
+			 
+		 case 10:
+			 numDys+=30;
+			 
+		 case 9:
+			 numDys+=31;
+			 
+		 case 8:
+			 numDys+=31;
+			 
+		 case 7:
+			 numDys+=30;
+		 case 6:
+			 numDys+=31;
+		 case 5:
+			 numDys+=30;
+		 case 4:
+			 numDys+=31;
+		 case 3:
+			 numDys+=28;
+		 case 2:
+			 numDys+=31;
+		  
+			 
+		 }
+	     numDys+=day;
+	     if(year%4==0 && month<=2) {
+	    	 numDys--;
+	     }
+	     
+	     int dowIndex=numDys%7;
+	     String[] dows= {"sun","mon","tue","wed","thur","fri","sat"};
+		 return dows[dowIndex];
+}
+	
+	public static void main(String[] args) {
+		DOWFind finder=new DOWFind();
+		String dow=finder.dow(15,2,2021);
+	}
+}
